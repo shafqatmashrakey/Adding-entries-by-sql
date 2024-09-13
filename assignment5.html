@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="author" content="Shafqat Mashrakey" />
+  <title>Presentation Template</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="scripts/slidy.css" /> <!-- http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css -->
+  <script src="scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script> <!-- http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js-->
+  <script src="scripts/jquery-3.3.1.min.js"
+    charset="utf-8" type="text/javascript"></script> <!-- https://code.jquery.com/jquery-3.3.1.min.js -->
+  <script type="text/javascript" src="scripts/qrcode.js"></script>
+</head>
+<style>
+
+  /* two-colomn layout */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .right-side-image {
+    float: right;
+    width: 300px;
+    border: 0px solid #004480;
+    padding: 10px;
+  }
+
+  /* global properties to apply to all images */
+  .img {
+    float: left;
+  }
+
+  /* qrcode generator image size */
+  #qrcode {
+    width:160px;
+    height:160px;
+    margin-top:15px;
+  }
+  .three_images
+  {
+    display: flex;
+  }
+  .image1
+  {
+    border: 2px solid#004480;
+  
+  }
+  .image2
+  {
+    border: 2px solid rebeccapurple;
+
+  }
+  .image3
+  {
+    border: 2px solid black;
+
+  }
+  .image4
+  {
+    backdrop-filter: 2px solid rgba(128, 126, 126, 0.466) ;
+  }
+  .column
+  {
+    flex: 33.33%;
+    padding: 5px;
+  }
+  /* email link */
+  a.email:link {color:#eeff00;}
+  a.email:hover {color:#ff00ee; background:#66ff66;}
+</style>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Presentation <br><font color = "#000080"> Assignment 5 </font></h1>
+  <p class="author">Shafqat Mashrakey</p>
+  <p class="date">Computer Science Department <br><font color = "#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern Connecticut State University</font></p>
+  <button id="view-fullscreen">[Fullscreen]</button>
+  <div class="three_images">
+    <div class="image1 column">
+      <img src="./images/scsu-logo-compact-blue.png" alt="scsu logo" style="width: 100%">
+      <p>this is scsu image</p>
+      <p>
+        to find more about this <a href="https://www.stcloudstate.edu/its/services/web-app/default.aspx" target="_blank"> click here</a>
+      </p>
+    </div>
+    <div class="image2 column">
+      <p>computer logo</p>
+      <img src="./images/computer-repair-logo-template-computer-pixels-logo-software-development-design-free-vector.png" alt="computer logo" style="width: 50%"></div>
+    <div class="image3 column">
+      <p>hacker man logo</p>
+      <img src="./images/istockphoto-911660906-612x612.png" alt="hacker man" style="width: 50%"></div>
+  </div>
+  <script type="text/javascript">
+    (function () {
+        var viewFullScreen = document.getElementById("view-fullscreen");
+        if (viewFullScreen) {
+            viewFullScreen.addEventListener("click", function () {
+                var docElm = document.documentElement;
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm = document.body; //overwrite the element (for IE)
+                    docElm.msRequestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            }, false);
+        }
+
+        var cancelFullScreen = document.getElementById("cancel-fullscreen");
+        if (cancelFullScreen) {
+            cancelFullScreen.addEventListener("click", function () {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+                else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }, false);
+        }
+
+        var fullscreenState = document.getElementById("fullscreen-state");
+        if (fullscreenState) {
+            document.addEventListener("fullscreenchange", function () {
+                fullscreenState.innerHTML = (document.fullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("msfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.msFullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("mozfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";
+            }, false);
+
+            document.addEventListener("webkitfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.webkitIsFullScreen)? "" : "not ";
+            }, false);
+        }
+
+    })();
+    </script>
+</div>
+<div class="section slide level1" id="alternatives">
+  <h1><i><u>Structured Query language</u></i></h1>
+  <ol class="incremental" style="list-style-type: decimal">
+  <p>Structured Query Language (SQL) is a standardized programming language that is used to manage relational databases and perform various operations on the data in them.</p>
+  <h1><i><u>Creating a table by SQL:</u></i></h1>
+  <li><p>To create a table first i had to install my SQL workbench</p></li>
+  <li><p>I had to connect with the required server by following the instruction on Blackboard</p></li>
+  <li><p>and then modify this code using my id to declare the variable that i needed <br>
+    CREATE TABLE SCSU_NetID(
+      entryID INT(11) AUTO_INCREMENT PRIMARY KEY,
+      lastName VARCHAR(50),
+      firstName VARCHAR(50),
+      major VARCHAR(100),
+      email VARCHAR(100));
+  </p>
+  </li>
+  <h1><i><u>Adding entries to a table:</u></i></h1>
+  <ol class="incremental" style="list-style-type: decimal">
+    <li><p>Follow this code where i tried to use KEY:VALUE method where the keys are lastname,firstname,major,email. <br>
+      INSERT INTO mashrakeys1(lastName, firstName, major, email) VALUES ('Mashrakey, 'Shafqat', 'Computer Science', 'mashrakeys1@southernct.edu');
+    </p></li>
+    <li><p>Modified existing table to add a column</p></li>
+    <li><p>Descriebed the table and updated it</p></li>
+    <h1><i><u>Result</u></i></h1>
+    <img src="./images/Screenshot 2023-03-13 211800.png" alt="Result">
+  </ol>
+  </ol></li>
+</div>
+<div class="section slide level1" id="this">
+  <h1><i><u> References: </h1></i></u>
+  <ol class="incremental" style="list-style-type: decimal">
+  <li> To create a table 
+    (<a href=" https://mariadb.com/kb/en/create-table/"  target=_blank><i>Reference</i></a>)</ul>
+  </li> 
+  <li>To describe table structure
+    (<a href=" https://mariadb.com/kb/en/describe/"  target=_blank><i>Reference</i></a>)</ul>
+  </li>
+  <li> To add entries to a table
+    (<a href="https://mariadb.com/kb/en/insert/"  target=_blank><i>Reference</i></a>)</ul>
+  </li>
+  </ol> 
+</div>
+<div class="section slide level1" id="questions">
+  <h1>Questions?</h1>
+  <a class="email" href="mailto:mashrakeys1@southernct.edu">
+  <ul style=
+    "text-align: middle;
+    font-family: Verdana,sans-serif;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+    mashrakeys1@southernct.edu</a><br>
+    <img src="./images/scsu-logo-compact-blue.png" alt="logo">
+  </ul>
+</div>
